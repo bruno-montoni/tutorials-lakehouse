@@ -1,0 +1,206 @@
+{
+  "bronze.sessions": {
+    "path": "./lakehouse\\bronze\\sessions",
+    "tier": "bronze",
+    "description": "Bronze layer: sessions ",
+    "partition_cols": [
+      "season"
+    ],
+    "created_at": "2026-09-12T17:14:20.627236",
+    "schema_version": 1
+  },
+  "bronze.laps": {
+    "path": "./lakehouse\\bronze\\laps",
+    "tier": "bronze",
+    "description": "Bronze layer: laps ",
+    "partition_cols": [
+      "season"
+    ],
+    "created_at": "2026-09-12T17:33:24.285433",
+    "schema_version": 1
+  },
+  "bronze.weather": {
+    "path": "./lakehouse\\bronze\\weather",
+    "tier": "bronze",
+    "description": "Bronze layer: weather ",
+    "partition_cols": [
+      "season"
+    ],
+    "created_at": "2026-09-12T17:33:25.221746",
+    "schema_version": 1
+  },
+  "bronze.results": {
+    "path": "./lakehouse\\bronze\\results",
+    "tier": "bronze",
+    "description": "Bronze layer: results ",
+    "partition_cols": [
+      "season"
+    ],
+    "created_at": "2026-09-12T17:33:25.256983",
+    "schema_version": 1
+  },
+  "silver.dim_drivers": {
+    "path": "./lakehouse\\silver\\dim_drivers",
+    "tier": "silver",
+    "description": "Silver layer: dim_drivers",
+    "partition_cols": [
+      "driver_id"
+    ],
+    "created_at": "2026-09-26T23:32:20.471947",
+    "schema_version": 1
+  },
+  "silver.dim_constructors": {
+    "path": "./lakehouse\\silver\\dim_constructors",
+    "tier": "silver",
+    "description": "Silver layer: dim_constructors",
+    "partition_cols": [
+      "constructor_id"
+    ],
+    "created_at": "2026-09-26T23:32:20.583603",
+    "schema_version": 1
+  },
+  "silver.dim_circuits": {
+    "path": "./lakehouse\\silver\\dim_circuits",
+    "tier": "silver",
+    "description": "Silver layer: dim_circuits",
+    "partition_cols": [
+      "circuit_id"
+    ],
+    "created_at": "2026-09-26T23:32:20.762319",
+    "schema_version": 1
+  },
+  "silver.dim_sessions": {
+    "path": "./lakehouse\\silver\\dim_sessions",
+    "tier": "silver",
+    "description": "Silver layer: dim_sessions",
+    "partition_cols": [
+      "session_id"
+    ],
+    "created_at": "2026-09-26T23:32:21.057306",
+    "schema_version": 1
+  },
+  "silver.fact_laps": {
+    "path": "./lakehouse\\silver\\fact_laps",
+    "tier": "silver",
+    "description": "Silver layer: fact_laps",
+    "partition_cols": [
+      "session_id",
+      "session_type",
+      "driver_number",
+      "lap_number"
+    ],
+    "created_at": "2026-09-26T23:36:02.427179",
+    "schema_version": 1
+  },
+  "silver.fact_weather": {
+    "path": "./lakehouse\\silver\\fact_weather",
+    "tier": "silver",
+    "description": "Silver layer: fact_weather",
+    "partition_cols": [
+      "session_id"
+    ],
+    "created_at": "2026-09-26T23:36:03.104413",
+    "schema_version": 1
+  },
+  "silver.fact_results": {
+    "path": "./lakehouse\\silver\\fact_results",
+    "tier": "silver",
+    "description": "Silver layer: fact_results",
+    "partition_cols": [
+      "session_id",
+      "driver_number"
+    ],
+    "created_at": "2026-09-26T23:36:10.344986",
+    "schema_version": 1
+  },
+  "gold.dim_drivers": {
+    "path": "./lakehouse\\gold\\dim_drivers",
+    "tier": "gold",
+    "description": "Gold layer: dim_drivers",
+    "partition_cols": [
+      "driver_id"
+    ],
+    "created_at": "2026-09-27T01:25:15.936643",
+    "schema_version": 1
+  },
+  "gold.dim_circuits": {
+    "path": "./lakehouse\\gold\\dim_circuits",
+    "tier": "gold",
+    "description": "Gold layer: dim_circuits",
+    "partition_cols": [
+      "circuit_id"
+    ],
+    "created_at": "2026-09-27T01:25:16.077827",
+    "schema_version": 1
+  },
+  "gold.dim_constructors": {
+    "path": "./lakehouse\\gold\\dim_constructors",
+    "tier": "gold",
+    "description": "Gold layer: dim_constructors",
+    "partition_cols": [
+      "constructor_id"
+    ],
+    "created_at": "2026-09-27T01:25:16.200151",
+    "schema_version": 1
+  },
+  "gold.dim_sessions": {
+    "path": "./lakehouse\\gold\\dim_sessions",
+    "tier": "gold",
+    "description": "Gold layer: dim_sessions",
+    "partition_cols": [
+      "session_id"
+    ],
+    "created_at": "2026-09-27T01:25:16.571497",
+    "schema_version": 1
+  },
+  "gold.fact_race_results": {
+    "path": "./lakehouse\\gold\\fact_race_results",
+    "tier": "gold",
+    "description": "Gold layer: fact_race_results",
+    "partition_cols": [
+      "session_id"
+    ],
+    "created_at": "2026-09-27T01:25:22.193011",
+    "schema_version": 1
+  },
+  "gold.fact_lap_times": {
+    "path": "./lakehouse\\gold\\fact_lap_times",
+    "tier": "gold",
+    "description": "Gold layer: fact_lap_times",
+    "partition_cols": [
+      "session_id"
+    ],
+    "created_at": "2026-09-27T01:25:17.602172",
+    "schema_version": 1
+  },
+  "gold.fact_pit_stops": {
+    "path": "./lakehouse\\gold\\fact_pit_stops",
+    "tier": "gold",
+    "description": "Gold layer: fact_pit_stops",
+    "partition_cols": [
+      "session_id"
+    ],
+    "created_at": "2026-09-27T01:25:22.061344",
+    "schema_version": 1
+  },
+  "gold.agg_driver_performance": {
+    "path": "./lakehouse\\gold\\agg_driver_performance",
+    "tier": "gold",
+    "description": "Gold layer: agg_driver_performance",
+    "partition_cols": [
+      "session_id"
+    ],
+    "created_at": "2026-09-27T01:25:22.865431",
+    "schema_version": 1
+  },
+  "gold.agg_constructor_reliability": {
+    "path": "./lakehouse\\gold\\agg_constructor_reliability",
+    "tier": "gold",
+    "description": "Gold layer: agg_constructor_reliability",
+    "partition_cols": [
+      "season"
+    ],
+    "created_at": "2026-09-27T01:25:22.973778",
+    "schema_version": 1
+  }
+}
